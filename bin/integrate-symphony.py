@@ -92,8 +92,9 @@ def main():
     print(features)
 
     print(f"Subsetting to {features.shape[0]} selected features...")
-    input = input[:, input.var_names.isin(features["Feature"])].copy()
     counts = counts[:, input.var_names.isin(features["Feature"])].copy()
+    input = input[:, input.var_names.isin(features["Feature"])].copy()
+    
 
     print("Adding unintegrated UMAP...")
     add_umap(input, counts=False)
