@@ -49,7 +49,7 @@ def calculate_batch_purity(adata):
 
     print("Calculating final score...")
     # Subtract from 1 so that 0 is the worst score and 1 the best
-    score = 1 - (sum(props) / len(props))
+    score = 1 - (sum(cluster_purities) / len(cluster_purities))
     print(f"Final score: {score}")
 
     return score
